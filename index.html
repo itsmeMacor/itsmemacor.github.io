@@ -1,280 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Maricor's</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-    <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maricor Palangao - Software Engineer & Technical Business Analyst">
+    <meta name="author" content="Maricor Palangao">
+    <title>Maricor Palangao | Software Engineer & Technical Business Analyst</title>
+    
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="css/modern-style.css">
 </head>
-
-<body id="page-top">
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">{'</span>
+                <a href="#home" class="logo-text">maricor</a>
+                <span class="logo-icon">}</span>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="Resume.html">ONLINE RESUME</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About Me</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Inside my Toolbox</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Projects</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">More Info</a>
-                    </li>
-                </ul>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
             </div>
-            <!-- /.navbar-collapse -->
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Welcome to my Site!</h1>
-                <hr>
-                <p>I am Maricor, a person that's always eager to learn and get things done.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Get to know more about me</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="stars"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="greeting">Hello, I'm</div>
+                <h1 class="hero-title">Maricor Palangao</h1>
+                <p class="hero-subtitle">From requirements to release—I make it happen.</p>
+                <p class="hero-description">
+                    Software Engineer, Technical Business Analyst, and Scrum Master delivering end-to-end, scalable solutions.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/maricor-palangao/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/itsmeMacor" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-bracket">
+                    <span>&lt;</span>
+                </div>
             </div>
         </div>
-    </header>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+        </div>
+    </section>
 
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">About Me</h2>
-                    <hr class="light">
-                    <p class="text-faded">
-                        I'd like to introduce myself as a self-starter person. During my undergrad years in college, I really motivate myself to know the things that I need to know and finish the work that I have to do. Lack of resources should not be a hindrance to me. As an aspiring Developer, I should be resourceful.
-                    </p>
-                    <p class="text-faded">
-                        One thing that would make me happy is to be committed with hands-on challenges. Through that, it would lead me into new learnings that 
-                        I always wanted. 
-                    </p>
-                    <p class="text-faded">
-                        "Willingness to learn", "Do whatever it takes" and "Believe in yourself" attitudes are more important for me rather than being intelligent alone. A dedicated, self-starter tech person possesses that character, he/she would be successful in an Information Technology field.
-                    </p>     
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container grid-2">
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>I’m a Technical Business Analyst and Agile Practitioner with a strong background in Software Engineering, specializing in translating business needs into clear, actionable requirements and guiding teams through successful delivery.</p>
+                <p>With hands-on experience in application development, database systems, and cloud environments, I bring a deep technical understanding that strengthens my ability to align stakeholders, refine processes, and support end-to-end product delivery as a Scrum Master and Agile facilitator.</p>
+                <p>I also leverage modern AI tools such as OpenAI technologies, GitHub Copilot, and Anthropic Claude to enhance productivity, accelerate development workflows, and improve decision-making across analysis and delivery processes.</p>
+                <p>My focus is on enabling efficient collaboration between business and technical teams, improving delivery outcomes, and ensuring that solutions are not only well built but also aligned with real business value.</p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">⚡</span>
+                        <span>Self-starter & resourceful</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎯</span>
+                        <span>Problem-solver at heart</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📚</span>
+                        <span>Lifelong learner</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🤝</span>
+                        <span>Team player</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Dedication</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services">
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Inside my Toolbox</h2>
-                    <hr class="primary">
+            <h2 class="section-title">Technical Toolbox</h2>
+            <p class="section-subtitle">Languages, frameworks, and tools I work with</p>
+            
+            <div class="skills-grid">
+                <!-- Backend Development -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">ASP.NET</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud & DevOps</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">Kubernetes</span>
+                    </div>
+                </div>
+
+                <!-- Additional Tools -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Methodologies</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">System Analysis</span>
+                        <span class="skill-tag">MVC Architecture</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Framework -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-cube"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Problem-Solving</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/avatars/development.png" width="90" height="90" border="0">
-                        <h3>Application Development</h3>
-                        <p class="text-muted">Java</p>
-                        <p class="text-muted">C#</p>
-                        <p class="text-muted">ASP.NET Web Forms</p>
-                        <p class="text-muted">PHP</p>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some work done</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <img src="img/portfolio/scorm.png" alt="SCORM Integrations Project">
+                            <!-- <i class="fas fa-exchange"></i> -->
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>SCORM Integrations</h3>
+                        <p class="project-tag">Integration | Systems</p>
+                        <p class="project-description">
+                            Developed and maintained SCORM API integrations with international clients' Learning Management Systems (LMS). Implemented Single-Sign-On (SSO) features and data synchronization protocols.
+                        </p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>REST APIs</span>
+                            <span>LMS Platforms</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/avatars/database.png" width="90" height="90" border="0">
-                        <h3>Database Management Systems</h3>
-                        <p class="text-muted">MySQL</p>
-                        <p class="text-muted">MS SQL Server</p>
-                        <p class="text-muted">PostgreSQL</p>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/portfolio/gservices.jpg" alt="GServices Platform Project" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3>GServices Platform</h3>
+                        <p class="project-tag">Backend | Database</p>
+                        <p class="project-description">
+                            Application's backend functionalities and database management. Added new API calls, modified source code, and performed comprehensive system analysis to enhance platform capabilities.
+                        </p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>Spring Framework</span>
+                            <span>MySQL</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/avatars/essentials.png" width="90" height="90" border="0">
-                        <h3>Other Essentials</h3>
-                        <p class="text-muted">System Analysis</p>
-                        <p class="text-muted">Git</p>
-                        <p class="text-muted">MVC</p>
-                        <p class="text-muted">Cloud Computing Platform (AWS)</p>
-                        <p class="text-muted">Apache Tomcat</p>
-                        <p class="text-muted">Agile Development</p>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/portfolio/thesis.png" alt="University Dissertation Project" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                       <img src="img/avatars/willing.png" width="90" height="90" border="0">
-                        <h3>Willingness to LEARN</h3>
-                        <p class="text-muted">Flexible</p>
-                        <p class="text-muted">Adaptable</p>
+                    <div class="project-content">
+                        <h3>University Dissertation Project</h3>
+                        <p class="project-tag">Thesis | System</p>
+                        <p class="project-description">
+                            Online Customer Acquisition and Lead Management System developed as thesis project. Streamlined customer acquisition and lead management processes with comprehensive system design and implementation.
+                        </p>
+                        <div class="project-tech">
+                            <span>ASP.NET</span>
+                            <span>C#</span>
+                            <span>MS SQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="portfolio">
+      <!-- Certifications Section -->
+    <section id="certifications" class="section certifications">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Projects</h2>
-                    <hr class="primary">
-                </div>
+            <h2 class="section-title">Certifications & Badges</h2>
+            <p class="section-subtitle">Professional credentials and recognition</p>
+            
+            <div class="badges-grid">
+                <!-- PSM I Badge -->
+                <a href="https://www.credly.com/badges/830c7205-38d6-41d4-a5ba-d53d16d81dd8" target="_blank" rel="noopener" class="badge-card">
+                    <div class="badge-image">
+                        <img src="img/certs/psm1.png" alt="PSM I Badge">
+                    </div>
+                    <h3>PSM I</h3>
+                    <p>Professional Scrum Master</p>
+                </a>
+
+                <!-- Red Hat Openshift Badge -->
+                <a href="https://www.credly.com/badges/89a384b1-d285-4266-8d7f-66d3e585a514" target="_blank" rel="noopener" class="badge-card">
+                    <div class="badge-image">
+                        <img src="img/certs/red-hat.png" alt="Red Hat Openshift Badge">
+                    </div>
+                    <h3>Red Hat Openshift</h3>
+                    <p>DO180</p>
+                </a>
+
+                <!-- WES Assessment Badge -->
+                <a href="https://www.credly.com/badges/9f537ec3-84fd-4159-a21b-7fae07317e55" target="_blank" rel="noopener" class="badge-card">
+                    <div class="badge-image">
+                        <img src="img/certs/wes.png" alt="WES Assessment Badge">
+                    </div>
+                    <h3>WES Assessment</h3>
+                    <p>Educational Credential Evaluation</p>
+                </a>
+            </div>
+
+            <div class="certifications-footer">
+                <a href="https://www.credly.com/users/maricor-palangao/badges" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fas fa-certificate"></i> View All Badges on Credly
+                </a>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box">
-                        <img src="img/portfolio/scorm.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                </div>
-                                <div class="project-name">
-                                    SCORM Integrations
-                                </div>
-                                <div>
-                                    Handled goFluent's SCORM Integrations with different International clientle. Developed SCORM API to sync goFluent's data with client's Learning Management System (LMS) and maintains goFluent System that concerns with Single-Sign-On (SSO) features
-                                </div>  
-                            </div>
-                        </div>
-                    </a>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Academic background and qualifications</p>
+            
+            <div class="education-grid">
+                <!-- Master's Degree -->
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Master's Degree</h3>
+                    <p class="degree-field">Technology Management</p>
+                    <p class="institution">University of the Philippines Diliman</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box">
-                        <img src="img/portfolio/gservices.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                </div>
-                                <div class="project-name">
-                                    GServices
-                                </div>
-                                <div>
-                                    Handled GServices Application's Backend Functionalities and Database. Backend System is written in Java integrated with Spring Framework and uses MySQL as its database. Added some new API calls, modified source code, perform database management and system analysis.
-                                </div>  
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box">
-                        <img src="img/portfolio/thesis" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    ASP.NET (thesis)
-                                </div>
-                                <div class="project-name">
-                                    Online Customer Acquisition and Inquiry Management System
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box">
-                        <img src="img/portfolio/chall.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    PHP (side project)
-                                </div>
-                                <div class="project-name">
-                                    School Project for Manila City Hall
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+
+                <!-- Bachelor's Degree -->
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Bachelor's Degree</h3>
+                    <p class="degree-field">Information Technology</p>
+                    <p class="institution">Technological University of the Philippines Manila</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact">
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
         <div class="container">
-            <div class="row"> 
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>You can get to know more about me and get connected through the following:</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <a href="https://ph.linkedin.com/pub/maricor-palangao/56/20/395" target="_blank">
-                    <img src="img/avatars/linkedin.png" width="60" height="60" border="0">
-                </div>
-                <div class="col-lg-4 text-center">
-                    <a href="https://github.com/itsmeMacor" target="_blank">
-                    <img src="img/avatars/github.png" width="60" height="60" border="0">
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:palangaomaricor@gmail.com">palangaomaricor@gmail.com</a></p>
-                </div>
-            </div>  
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Have a project or opportunity? I'd love to hear from you.</p>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="from_name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="from_email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Maricor Palangao. Built with <span class="heart">♡</span> and modern web technologies.</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/maricor-palangao/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        emailjs.init('1z9i7Nu7dJAy6C3o_');
+    </script>
+    <script src="js/modern-script.js"></script>
 </body>
-
 </html>
