@@ -552,10 +552,6 @@ img {
         align-items: center;
     }
 
-    .hero-visual {
-        order: -1;
-    }
-
     .hero-pill-row {
         justify-content: center;
     }
@@ -642,6 +638,16 @@ img {
 }
 
 /* ===== About Section ===== */
+.section.about .container {
+    display: block;
+}
+
+.about-text {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: left;
+}
+
 .about-text h2 {
     margin-bottom: 2rem;
 }
@@ -657,12 +663,14 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
+    max-width: 760px;
 }
 
 .highlight-item {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.82);
