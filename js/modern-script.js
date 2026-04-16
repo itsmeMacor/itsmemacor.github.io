@@ -270,5 +270,11 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ===== Dynamic Footer Year =====
+const currentYear = document.getElementById('currentYear');
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
 // ===== Initialize =====
 console.log('Modern portfolio initialized ✓');
