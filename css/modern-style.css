@@ -1070,7 +1070,7 @@ img {
 .project-image {
     min-height: 200px;
     aspect-ratio: 16 / 10;
-    background: linear-gradient(135deg, #f2c8da 0%, #171217 100%);
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1080,7 +1080,7 @@ img {
 .project-placeholder {
     font-size: 4rem;
     color: var(--accent-pink);
-    opacity: 0.6;
+    opacity: 0.75;
 }
 
 .project-content {
