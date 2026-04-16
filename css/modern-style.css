@@ -116,15 +116,20 @@ img {
     font-weight: 700;
     font-size: 1.4rem;
     font-family: var(--font-primary);
+    line-height: 1;
+    flex-shrink: 0;
 }
 
 .logo-icon {
     color: var(--primary-color);
     font-weight: 900;
     font-size: 1.6rem;
+    line-height: 1;
 }
 
 .logo-text {
+    display: inline-flex;
+    align-items: center;
     background: linear-gradient(135deg, #b74f7c 0%, #171217 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -137,14 +142,18 @@ img {
     display: flex;
     gap: 2rem;
     align-items: center;
+    height: 100%;
 }
 
 .nav-link {
+    display: inline-flex;
+    align-items: center;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-dark);
     transition: var(--transition-smooth);
     position: relative;
+    height: 100%;
 }
 
 .nav-link::after {
@@ -925,14 +934,114 @@ img {
     }
 }
 
-/* ===== Projects Section ===== */
-.projects-grid {
+/* ===== Academic Projects Section ===== */
+.section.academic-projects {
+    background: rgba(255, 252, 253, 0.72);
+    border-bottom: 1px solid rgba(183, 79, 124, 0.14);
+    position: relative;
+}
+
+.section.academic-projects::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    height: 220px;
+    background: linear-gradient(135deg, rgba(239, 184, 209, 0.3) 0%, transparent 100%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.academic-projects .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 980px;
+    margin: 0 auto;
+    overflow: visible;
+    scroll-snap-type: none;
+    scrollbar-width: none;
+}
+
+.academic-projects .projects-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.academic-projects .project-card {
+    flex: initial;
+}
+
+/* ===== Projects Section ===== */
+.projects-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.projects-header .section-title,
+.projects-header .section-subtitle {
+    text-align: center;
+}
+
+.projects-header .section-subtitle {
+    margin-bottom: 0;
+}
+
+.projects-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+    color: var(--accent-pink);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.projects-hint i {
+    animation: projectHintSlide 1.6s ease-in-out infinite;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(183, 79, 124, 0.35) transparent;
+    padding: 0.25rem 0;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background: rgba(183, 79, 124, 0.28);
+    border-radius: 999px;
+}
+
+@keyframes projectHintSlide {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.75;
+    }
+    50% {
+        transform: translateX(6px);
+        opacity: 1;
+    }
 }
 
 .project-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
     background: rgba(255, 253, 254, 0.88);
     border-radius: 26px;
     border: 1px solid rgba(183, 79, 124, 0.14);
@@ -941,6 +1050,7 @@ img {
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-sm);
+    scroll-snap-align: start;
 }
 
 .project-card:hover {
@@ -1292,9 +1402,22 @@ img {
         width: auto;
         max-width: 100%;
     }
+
+    .project-card {
+        flex-basis: calc((100% - 1.5rem) / 2);
+    }
+
+    .academic-projects .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
+    .projects-hint {
+        font-size: 0.85rem;
+    }
+
     .nav-brand {
         font-size: 1.1rem;
     }
@@ -1345,6 +1468,10 @@ img {
 
     .footer {
         padding: 1.5rem 0;
+    }
+
+    .project-card {
+        flex-basis: 100%;
     }
 }
 
