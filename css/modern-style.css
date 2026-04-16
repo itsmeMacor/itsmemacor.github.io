@@ -966,6 +966,7 @@ img {
 
 .form-group {
     grid-column: 1;
+    text-align: left;
 }
 
 .form-group input,
@@ -979,11 +980,39 @@ img {
     transition: var(--transition-smooth);
 }
 
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.12);
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border: 2px solid var(--primary-color);
     box-shadow: 0 0 0 3px rgba(255, 20, 147, 0.1);
+}
+
+.field-error {
+    min-height: 1.25rem;
+    margin-top: 0.45rem;
+    color: #ff8f8f;
+    font-size: 0.9rem;
+}
+
+.form-status {
+    min-height: 1.5rem;
+    color: #f6d9e7;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.form-status.is-success {
+    color: #9df0b7;
+}
+
+.form-status.is-error {
+    color: #ff8f8f;
 }
 
 .contact-form button {

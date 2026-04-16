@@ -361,12 +361,13 @@
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-subtitle">Have a project or opportunity? I'd love to hear from you.</p>
             <div class="contact-content">
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeevaglv" method="POST" novalidate>
                     <div class="form-group">
                         <input type="text" name="from_name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="from_email" placeholder="Your Email" required>
+                        <input type="email" name="from_email" id="fromEmail" placeholder="Your Email" autocomplete="email" required>
+                        <p class="field-error" id="emailError" aria-live="polite"></p>
                     </div>
                     <div class="form-group">
                         <input type="text" name="subject" placeholder="Subject" required>
@@ -375,6 +376,7 @@
                         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="form-status" id="formStatus" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -398,11 +400,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
-    <script>
-        // Initialize EmailJS
-        emailjs.init('1z9i7Nu7dJAy6C3o_');
-    </script>
     <script src="js/modern-script.js"></script>
 </body>
 </html>

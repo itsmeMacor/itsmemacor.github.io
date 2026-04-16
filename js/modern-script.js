@@ -82,55 +82,91 @@ document.querySelectorAll('.project-card, .skill-category, .stat-card').forEach(
     observer.observe(el);
 });
 
-// ===== Contact Form Handling with EmailJS =====
+// ===== Contact Form Handling =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    const emailInput = contactForm.querySelector('input[name="from_email"]');
+    const emailError = document.getElementById('emailError');
+    const formStatus = document.getElementById('formStatus');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function setFormStatus(message, type = '') {
+        formStatus.textContent = message;
+        formStatus.className = 'form-status';
+
+        if (type) {
+            formStatus.classList.add(`is-${type}`);
+        }
+    }
+
+    function validateEmailField() {
+        const emailValue = emailInput.value.trim();
+
+        if (!emailValue) {
+            emailInput.classList.remove('invalid');
+            emailError.textContent = '';
+            setFormStatus('');
+            return false;
+        }
+
+        const isValidEmail = emailPattern.test(emailValue);
+        emailInput.classList.toggle('invalid', !isValidEmail);
+        emailError.textContent = isValidEmail ? '' : 'Please enter a valid email address.';
+        if (isValidEmail) {
+            setFormStatus('');
+        }
+        return isValidEmail;
+    }
+
+    emailInput.addEventListener('input', validateEmailField);
+    emailInput.addEventListener('blur', validateEmailField);
+
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
+        if (!validateEmailField()) {
+            emailInput.focus();
+            return;
+        }
         
         // Show loading state
         const submitButton = this.querySelector('button');
         const originalText = submitButton.textContent;
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
-        
-        console.log('Form submitted');
-        console.log('Service ID: service_wi6lib6');
-        console.log('Template ID: template_5k5gvyg');
-        
-        // Send email using EmailJS
-        emailjs.sendForm('service_wi6lib6', 'template_5k5gvyg', this)
-            .then(function(response) {
-                console.log('Email sent successfully!', response);
-                // Success
-                submitButton.textContent = 'Message Sent! ✓';
-                submitButton.style.backgroundColor = '#50c878';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitButton.textContent = originalText;
-                    submitButton.style.backgroundColor = '';
-                    submitButton.disabled = false;
-                }, 3000);
-            }, function(error) {
-                // Error
-                console.error('EmailJS Error:', error);
-                console.error('Error message:', error.text);
-                submitButton.textContent = 'Error Sending Message';
-                submitButton.style.backgroundColor = '#ff6b6b';
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitButton.textContent = originalText;
-                    submitButton.style.backgroundColor = '';
-                    submitButton.disabled = false;
-                }, 3000);
-                
-                alert('Failed to send message. Error: ' + error.text);
+        setFormStatus('');
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    Accept: 'application/json'
+                }
             });
+
+            if (!response.ok) {
+                throw new Error('Unable to send your message right now.');
+            }
+
+            submitButton.textContent = 'Message Sent! ✓';
+            submitButton.style.backgroundColor = '#50c878';
+            setFormStatus('Thanks! Your message has been sent.', 'success');
+            contactForm.reset();
+            emailInput.classList.remove('invalid');
+            emailError.textContent = '';
+        } catch (error) {
+            console.error('Formspree Error:', error);
+            submitButton.textContent = 'Error Sending Message';
+            submitButton.style.backgroundColor = '#ff6b6b';
+            setFormStatus('Something went wrong. Please try again in a moment.', 'error');
+        } finally {
+            setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.style.backgroundColor = '';
+                submitButton.disabled = false;
+            }, 3000);
+        }
     });
 }
 
